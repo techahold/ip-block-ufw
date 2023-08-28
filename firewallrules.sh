@@ -147,7 +147,7 @@ echo -e "\n\Now blocking DC & VPN connections !\n"
 ipsetschedule="$(
   cat <<EOF
 echo -e "\n\tGetting Tor node list from dan.me.uk\n"
-wget -q -O - https://www.dan.me.uk/torlist/?exit > /tmp/tor.txt
+wget -q -O - https://www.dan.me.uk/torlist/ > /tmp/tor.txt
 CMD=\$(cat /tmp/tor.txt | uniq | sort | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')
 for IP in \$CMD; do
     let COUNT=COUNT+1
