@@ -163,6 +163,7 @@ for IP in \$CMD; do
     ipset add blacklist \$IP
 done
 echo -e "\n\Now blocking DC & VPN connections !\n"
+# Possibly need this in sudo ipset flush blacklist
 EOF
 )"
 echo "${ipsetschedule}" | sudo tee /etc/ipset/schedule.sh >/dev/null
